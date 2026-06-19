@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inteligência HER2+ — Pesquisa e Dados</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #eef2f2;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: #2d3748;
+    }
+
+    .wrapper {
+      max-width: 620px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    }
+
+    /* ── Header ── */
+    .header {
+      background-color: #1a3532;
+      padding: 36px 44px 30px;
+    }
+
+    .header-brand {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      color: #5ec6b0;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .header-url {
+      font-size: 11px;
+      color: rgba(94,198,176,0.55);
+      margin-bottom: 32px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      color: #5ec6b0;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .header h1 {
+      font-size: 15px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.5;
+      margin-bottom: 20px;
+      max-width: 480px;
+    }
+
+    .header h1 strong {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .header-divider {
+      height: 1px;
+      background: rgba(94,198,176,0.2);
+      margin-bottom: 18px;
+    }
+
+    .header-meta {
+      font-size: 11px;
+      color: rgba(94,198,176,0.6);
+    }
+
+    /* ── Hook section ── */
+    .hook {
+      background: #f8fafa;
+      border-bottom: 1px solid #e8f0ef;
+      padding: 32px 44px;
+    }
+
+    .hook p {
+      font-size: 17px;
+      line-height: 1.65;
+      color: #1a3532;
+      font-weight: 400;
+    }
+
+    .hook p strong {
+      font-weight: 700;
+    }
+
+    /* ── Body ── */
+    .body {
+      padding: 36px 44px;
+    }
+
+    /* ── Problem block ── */
+    .problem-block {
+      margin-bottom: 36px;
+    }
+
+    .label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #5ec6b0;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .problem-block p {
+      font-size: 14px;
+      line-height: 1.75;
+      color: #4a5568;
+    }
+
+    .problem-block p + p {
+      margin-top: 12px;
+    }
+
+    /* ── Tease stats ── */
+    .tease-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+
+    .tease-card {
+      border: 1px solid #d4ece8;
+      border-radius: 4px;
+      padding: 18px 16px;
+      background: #f0faf8;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tease-card::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: #5ec6b0;
+    }
+
+    .tease-number {
+      font-size: 30px;
+      font-weight: 900;
+      color: #1a3532;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .tease-desc {
+      font-size: 12px;
+      color: #4a7a72;
+      line-height: 1.4;
+    }
+
+    /* ── Teaser insights ── */
+    .insights {
+      margin-bottom: 36px;
+    }
+
+    .insight-item {
+      border-bottom: 1px solid #eef2f2;
+      padding: 16px 0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .insight-item:last-child {
+      border-bottom: none;
+    }
+
+    .insight-dot {
+      flex-shrink: 0;
+      width: 8px;
+      height: 8px;
+      background: #5ec6b0;
+      border-radius: 50%;
+      margin-top: 6px;
+    }
+
+    .insight-text {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #4a5568;
+    }
+
+    .insight-text strong {
+      color: #1a3532;
+    }
+
+    .insight-blur {
+      display: inline-block;
+      background: #d4ece8;
+      color: transparent;
+      border-radius: 2px;
+      user-select: none;
+      font-size: 13px;
+    }
+
+    /* ── Value prop ── */
+    .value-box {
+      background: #1a3532;
+      border-radius: 4px;
+      padding: 28px 28px;
+      margin-bottom: 36px;
+    }
+
+    .value-box .value-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+
+    .value-box ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .value-box ul li {
+      font-size: 13px;
+      color: #a8d5cc;
+      line-height: 1.6;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(94,198,176,0.15);
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .value-box ul li:last-child {
+      border-bottom: none;
+    }
+
+    .value-box ul li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #5ec6b0;
+      font-weight: 700;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      text-align: center;
+      padding: 40px 44px;
+      background: #f8fafa;
+      border-top: 1px solid #e8f0ef;
+    }
+
+    .cta-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #5ec6b0;
+      margin-bottom: 10px;
+    }
+
+    .cta-section h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #1a3532;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .cta-section p {
+      font-size: 14px;
+      color: #718096;
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #1a3532;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+      padding: 15px 40px;
+      border-radius: 3px;
+      text-decoration: none;
+    }
+
+    .cta-button:hover {
+      background: #2a5c56;
+    }
+
+    .cta-note {
+      display: block;
+      font-size: 12px;
+      color: #a0aec0;
+      margin-top: 16px;
+      line-height: 1.5;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #111f1e;
+      padding: 22px 44px;
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 11px;
+      color: #3a6560;
+      line-height: 1.9;
+    }
+
+    .footer a {
+      color: #5ec6b0;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-brand">Pesquisa e Dados</div>
+    <div class="header-url">pesquisaedados.com</div>
+    <div class="eyebrow">Relatório de Inteligência Competitiva</div>
+    <h1>
+      O pipeline global de <strong>câncer de mama HER2+</strong> cresceu 7× em 6 anos —
+      e a janela para decisões estratégicas está se fechando.
+    </h1>
+    <div class="header-divider"></div>
+    <div class="header-meta">700 estudos ativos · Fases 2–4 · ClinicalTrials.gov · Junho 2026</div>
+  </div>
+
+  <!-- Hook -->
+  <div class="hook">
+    <p>
+      Quem define o padrão de cuidado em HER2+ nos próximos anos <strong>já iniciou os estudos.</strong>
+      Você sabe quais moléculas estão avançando, quais empresas estão se movendo mais rápido
+      e onde o Brasil fica nessa corrida?
+    </p>
+  </div>
+
+  <!-- Body -->
+  <div class="body">
+
+    <!-- Problem -->
+    <div class="problem-block">
+      <span class="label">O problema</span>
+      <p>
+        O pipeline HER2+ nunca foi tão complexo — nem tão competitivo. São centenas de estudos ativos
+        em simultâneo, com novos patrocinadores asiáticos entrando em cena, ADCs redefinindo
+        o padrão de cuidado e uma onda de leituras regulatórias prevista para os próximos 24 meses.
+      </p>
+      <p>
+        Monitorar tudo isso com dados fragmentados é impossível.
+        <strong>Decisões de portfólio, acesso e posicionamento competitivo exigem uma visão integrada —
+        atualizada, segmentada e acionável.</strong>
+      </p>
+    </div>
+
+    <!-- Tease stats -->
+    <span class="label">Alguns números do relatório</span>
+    <div class="tease-grid">
+      <div class="tease-card">
+        <div class="tease-number">208</div>
+        <div class="tease-desc">estudos em Fase 3 com leituras previstas para 2026–2027</div>
+      </div>
+      <div class="tease-card">
+        <div class="tease-number">34%</div>
+        <div class="tease-desc">do pipeline tem patrocinador chinês — mais que EUA e Europa juntos</div>
+      </div>
+      <div class="tease-card">
+        <div class="tease-number">46</div>
+        <div class="tease-desc">estudos ativos com T-DXd — e uma nova geração de ADCs logo atrás</div>
+      </div>
+      <div class="tease-card">
+        <div class="tease-number">&lt; 1%</div>
+        <div class="tease-desc">do pipeline global tem presença no Brasil — oportunidade clara em aberto</div>
+      </div>
+    </div>
+
+    <!-- Teaser insights -->
+    <div class="insights">
+      <span class="label">O que o relatório revela</span>
+
+      <div class="insight-item">
+        <div class="insight-dot"></div>
+        <div class="insight-text">
+          <strong>Qual empresa lidera o pipeline — e qual está perdendo terreno.</strong>
+          O ranking completo de patrocinadores por volume, fase e indicação mostra movimentos
+          que não aparecem em relatórios de vendas.
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-dot"></div>
+        <div class="insight-text">
+          <strong>Quais moléculas vão disputar o mercado nos próximos 2 anos.</strong>
+          Identificamos os candidatos em Fase 3 com maior capacidade de pacientes e os
+          marcos regulatórios no horizonte de 2026–2027.
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-dot"></div>
+        <div class="insight-text">
+          <strong>Por que a China mudou o jogo — e o que isso significa para o seu portfólio.</strong>
+          ADCs emergentes asiáticos já competem diretamente com T-DXd.
+          O relatório mapeia os candidatos e seus diferenciadores clínicos.
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-dot"></div>
+        <div class="insight-text">
+          <strong>Onde o Brasil está — e onde deveria estar.</strong>
+          Com menos de 1% do pipeline global, o país tem uma janela de oportunidade
+          concreta para atrair estudos Fase 2/3 ainda em fase de seleção de centros.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Value prop -->
+    <div class="value-box">
+      <div class="value-title">O que você leva no relatório</div>
+      <ul>
+        <li>Panorama completo de 700 ensaios clínicos ativos, segmentados por estágio e subtipo molecular</li>
+        <li>Análise da paisagem terapêutica com as classes em ascensão e os fármacos mais investigados</li>
+        <li>Ranking dos 12 maiores patrocinadores globais com posicionamento estratégico</li>
+        <li>Mapeamento dos ADCs emergentes e suas ameaças competitivas ao padrão atual</li>
+        <li>Análise geográfica da pesquisa global e diagnóstico da presença brasileira</li>
+        <li>Recomendações estratégicas prontas para apresentar à liderança</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="cta-eyebrow">Disponível agora</div>
+    <h2>Adquira o relatório completo</h2>
+    <p>
+      13 páginas de inteligência competitiva baseada em dados primários.<br>
+      Entrega imediata em PDF. Atualização trimestral disponível.
+    </p>
+    <a class="cta-button" href="mailto:contato@pesquisaedados.com?subject=Interesse — Relatório HER2+ Junho 2026">
+      Quero adquirir o relatório
+    </a>
+    <span class="cta-note">
+      Ou responda a este e-mail para receber mais informações e condições comerciais.
+    </span>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>
+      <a href="http://www.pesquisaedados.com">Pesquisa e Dados</a> &nbsp;·&nbsp; pesquisaedados.com<br>
+      Dados extraídos da ClinicalTrials.gov (U.S. National Library of Medicine) · Coleta: 12/06/2026<br><br>
+      Você recebe este e-mail por interesse em inteligência de mercado oncológico.<br>
+      <a href="#">Cancelar recebimento</a> &nbsp;·&nbsp; © 2026 Pesquisa e Dados
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>

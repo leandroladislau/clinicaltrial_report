@@ -1,0 +1,544 @@
+PESQUISA E DADOS
+www.pesquisaedados.com
+RELATÓRIO DE INTELIGÊNCIA COMPETITIVA E REGULATÓRIA
+CÂNCER DE MAMA
+HER2-POSITIVO
+Pipeline Global  ·  Análise por Indicação  ·  Paisagem Competitiva
+Terapias Emergentes  ·  Presença no Brasil
+Fonte de dados: ClinicalTrials.gov  —  Junho de 2026
+Fonte primária: U.S. National Library of Medicine (API v2)
+Data de coleta: 02 de junho de 2026  ·  697 estudos (Fases 2–4)
+Classificação: Uso Interno — Confidencial
+© 2026 Pesquisa e Dados. Todos os direitos reservados.
+
+
+Pesquisa e Dados  ·  Inteligência Competitiva HER2+  ·  Uso Interno Confidencial
+Página 2
+Índice
+1. Sumário Executivo
+3
+2. Panorama Geral do Pipeline
+4
+3. Concentração Geográfica da Pesquisa
+5
+4. Análise por Indicação (subtipo × estágio)
+6
+5. Paisagem Terapêutica — Fármacos e Classes
+8
+6. Análise Competitiva — Patrocinadores
+9
+7. Pipeline Emergente — ADCs e Novas Moléculas
+10
+8. Presença no Brasil
+11
+9. Análise Regulatória e Ciclo de Vida
+12
+10. Conclusões e Recomendações Estratégicas
+13
+Metodologia e Escopo
+Fonte: ClinicalTrials.gov (U.S. National Library of Medicine), API v2, coleta em 02/06/2026. Universo: 697
+ensaios intervencionais em câncer de mama relacionados a HER2, nas Fases 2, 3 e 4, com status ativo
+(recrutando, ativo/não-recrutando, não iniciado ou por convite). Classificação clínica: cada estudo foi
+categorizado por subtipo molecular (HER2+, HR+/HER2−, TNBC) e por estágio da doença
+(inicial/(neo)adjuvante, metastático/avançado, metástase cerebral), a partir de processamento textual de
+condições, título, resumo e intervenções. Limitações: o módulo de localizações geográficas não foi
+preservado na coleta — a presença no Brasil e a região do patrocinador são estimativas conservadoras (ver
+seções 3 e 8).
+Como ler este relatório: os números refletem a atividade de pesquisa (volume de estudos e capacidade de
+pacientes), não vendas ou participação de mercado. Um alto volume de estudos sinaliza intensidade
+competitiva e prioridade estratégica das empresas naquela indicação ou molécula.
+
+
+Pesquisa e Dados  ·  Inteligência Competitiva HER2+  ·  Uso Interno Confidencial
+Página 3
+1. Sumário Executivo
+Este relatório mapeia o panorama global de ensaios clínicos em câncer de mama HER2-positivo, com base
+em 697 estudos ativos (Fases 2–4) e mais de 397 mil pacientes planejados. A análise segmenta o pipeline
+por indicação clínica, paisagem terapêutica, concentração competitiva e geográfica, com foco nas
+implicações estratégicas para a indústria farmacêutica e na oportunidade ainda subexplorada do mercado
+brasileiro.
+697
+349
+208
+397k
+4
+Estudos ativos
+Fases 2, 3 e 4
+Recrutando
+Abertos a pacientes
+Em Fase 3
+Pipeline de registro
+Pacientes
+Capacidade planejada
+Com Brasil
+< 1% do pipeline
+Principais Achados Estratégicos
+• Pipeline em expansão acelerada: os novos estudos por ano cresceram de ~19 (2019) para 135 (2025) —
+alta superior a 7×. O semestre parcial de 2026 já soma 92 estudos, indicando que o recorde deve ser
+superado.
+• O foco migrou para a doença metastática: a indicação Metastático/Avançado lidera com 260 estudos,
+seguida de perto pela doença inicial/(neo)adjuvante (224), que concentra a maior capacidade de
+pacientes (intenção curativa, estudos maiores).
+• ADCs redefinem o padrão de cuidado: liderados por Trastuzumab Deruxtecan (T-DXd), os
+Anticorpo-Conjugados a Drogas são a classe de inovação mais dinâmica, com uma onda de candidatos
+asiáticos (SHR-A1811, ARX788, RC48) desafiando o paradigma.
+• A China é o epicentro da pesquisa: ao menos 240 estudos (34%) têm patrocinador chinês — mais que
+EUA e Europa juntos entre os classificáveis, sinalizando uma mudança no eixo global de P&D; oncológico.
+• Brasil sub-representado: apenas 4 estudos com menção ao país (< 1% do pipeline), evidenciando uma
+oportunidade estratégica de atração de centros e investimento.
+O Pipeline em um Relance — Estudos por Estágio Clínico
+A doença metastática e a inicial/(neo)adjuvante respondem pela maioria do pipeline ativo (detalhamento na seção 4).
+
+
+Pesquisa e Dados  ·  Inteligência Competitiva HER2+  ·  Uso Interno Confidencial
+Página 4
+2. Panorama Geral do Pipeline
+Figura 1 — Status de recrutamento (esq.) e fase clínica (dir.) dos 697 estudos. Metade está em recrutamento ativo; 30% em Fase 3
+(estágio de registro).
+Figura 2 — Novos ensaios iniciados por ano (2015–2026). Crescimento >7× na última década.
+Nota: os dados de 2026 são parciais (coleta em junho/2026). Os 92 estudos já registrados representam
+apenas o 1º semestre — em ritmo de superar o recorde de 135 estudos de 2025.
+
+
+Pesquisa e Dados  ·  Inteligência Competitiva HER2+  ·  Uso Interno Confidencial
+Página 5
+3. Concentração Geográfica da Pesquisa
+A origem do patrocinador líder revela onde está sendo gerado o conhecimento clínico em HER2+. A
+classificação abaixo é uma estimativa por heurística sobre o nome do patrocinador (instituições e empresas
+reconhecidas); estudos não classificáveis aparecem como “Outros / N/D”.
+Figura 3 — Região do patrocinador líder (esq.) e categoria institucional (dir.).
+O eixo da pesquisa migrou para a Ásia. Com pelo menos 240 estudos (34%), a China supera EUA e Europa
+individualmente — e provavelmente é subestimada, pois parte do bucket “Outros / N/D” também é chinesa
+(farmacêuticas e hospitais regionais). Instituições como Fudan University, Henan Cancer Hospital e Sun
+Yat-Sen lideram em volume, combinando alta produtividade acadêmica com acesso a grandes populações
+de pacientes. Implicação: dados regulatórios relevantes serão crescentemente gerados na Ásia — o
+monitoramento competitivo precisa incluir publicações e agências regulatórias asiáticas.
+Cerca de dois terços dos estudos têm patrocínio acadêmico/hospitalar — muitos testando combinações,
+biossimilares e otimização de regimes já aprovados. A indústria farmacêutica concentra-se nos ativos
+proprietários de maior valor (ADCs, novas moléculas), tema das seções 5 a 7.
+
+
+Pesquisa e Dados  ·  Inteligência Competitiva HER2+  ·  Uso Interno Confidencial
+Página 6
+4. Análise por Indicação (subtipo × estágio)
+Para uma leitura clínica acionável, segmentamos o pipeline em dois eixos: o subtipo molecular (que define a
+biologia do tumor e a estratégia de droga) e o estágio da doença (que define o objetivo terapêutico —
+curativo vs. controle). Como esperado para uma busca centrada em HER2, 650 estudos (93%) são
+HER2-positivos.
+Figura 4 — Mapa de árvore do pipeline por estágio clínico. A doença metastática e a inicial/(neo)adjuvante concentram a grande
+maioria dos estudos.
+Figura 5 — Subtipo molecular (esq.) e capacidade de pacientes por estágio (dir.). A doença inicial concentra a maior capacidade —
+estudos adjuvantes são grandes.
+
+
+Pesquisa e Dados  ·  Inteligência Competitiva HER2+  ·  Uso Interno Confidencial
+Página 7
+Matriz Subtipo × Estágio
+Figura 6 — Cruzamento entre subtipo e estágio. Concentra-se onde a competição é mais intensa: HER2+ (triplo positivo e puro) na
+doença metastática e inicial.
+Resumo Quantitativo por Estágio Clínico
+Estágio da doença
+Nº Estudos
+Pacientes Est.
+Fase 3
+Recrutando
+Metastático / Avançado
+260
+65,867
+79
+141
+Inicial / (Neo)adjuvante
+224
+160,715
+75
+105
+Misto / Multi-estágio
+152
+47,840
+45
+75
+Metástase Cerebral (SNC)
+34
+3,006
+1
+16
+Não especificado
+27
+119,732
+8
+12
+Leitura estratégica: a doença metastática é o campo de batalha competitivo mais ativo (maior nº de
+estudos, ciclos mais rápidos), enquanto a doença inicial/(neo)adjuvante é o território de maior valor de
+longo prazo (estudos grandes, intenção curativa, desfechos definitivos). A metástase cerebral (SNC), embora
+pequena em volume, é um unmet need de alto valor onde TKIs como tucatinib e pyrotinib se diferenciam.
+
+
+Pesquisa e Dados  ·  Inteligência Competitiva HER2+  ·  Uso Interno Confidencial
+Página 8
+5. Paisagem Terapêutica — Fármacos e Classes
+Figura 7 — Classes terapêuticas (esq.) e fármacos mais frequentes (dir.). Trastuzumab e pertuzumab seguem como espinha dorsal;
+ADCs e CDK4/6i em ascensão.
+Análise por Classe Terapêutica
+Anti-HER2 (mAb /
+ADC)
+Backbone do tratamento. Trastuzumab e pertuzumab continuam como base, mas os
+ADCs de nova geração — liderados por T-DXd (AstraZeneca/Daiichi Sankyo) — estão
+redefinindo o padrão de cuidado na doença metastática e avançando para linhas mais
+precoces.
+TKI Anti-HER2
+Inibidores de tirosina quinase (tucatinib, pyrotinib, neratinib) com destaque em
+metástase cerebral. Pyrotinib domina na China; tucatinib avança no Ocidente.
+CDK4/6 Inibidores
+Investigados em combinação com anti-HER2 e hormonioterapia, testando se a eficácia
+em HR+/HER2− se traduz no contexto HER2+/HR+ (triplo positivo).
+Imuno-oncologia
+Combinações de checkpoint inhibitors com anti-HER2; resultados mistos, com
+hipótese ativa no subgrupo PD-L1 alto.
+ADCs Emergentes
+A 
+próxima 
+geração 
+(SHR-A1811, 
+ARX788, 
+RC48) 
+está 
+majoritariamente 
+em
+desenvolvimento na China — concorrentes diretos de T-DXd, com cargas úteis e
+perfis de segurança diferenciados.
+
+
+Pesquisa e Dados  ·  Inteligência Competitiva HER2+  ·  Uso Interno Confidencial
+Página 9
+6. Análise Competitiva — Patrocinadores
+Figura 8 — Ranking de patrocinadores por nº de estudos ativos. Instituições acadêmicas chinesas lideram em volume.
+Posicionamento Estratégico — Grandes Farmacêuticas
+Empresa
+Estudos
+Foco Principal
+Estágio
+Diferencial
+AstraZeneca
+20
+T-DXd (metastático → early)
+Fase 3 /
+Comercial
+Líder global em ADCs
+Roche
+18
+Trastuzumab, Pertuzumab,
+Giredestrant
+Fase 3 /
+Comercial
+Fundador do padrão de
+cuidado
+Novartis
+12
+Alpelisib + anti-HER2, CDK4/6
+Fase 2/3
+Foco em combinações
+Eli Lilly
+11
+Abemaciclib
+Fase 3 /
+Comercial
+Liderança em CDK4/6
+Pfizer / Seagen
+10
+Palbociclib, Tucatinib
+Fase 2/3
+TKI + CDK4/6
+MSD (Merck)
+8
+Pembrolizumab (IO + anti-HER2)
+Fase 2/3
+Imuno-oncologia
+Dois jogos paralelos: as Big Pharma ocidentais (AstraZeneca, Roche, Novartis, Lilly, Pfizer) competem por
+ativos proprietários de alto valor — ADCs, TKIs seletivos e combinações com CDK4/6. Em paralelo, o
+ecossistema acadêmico/farmacêutico chinês gera volume massivo de estudos, incluindo ADCs concorrentes
+e biossimilares, com impacto regulatório crescente no maior mercado oncológico do mundo.
+
+
+Pesquisa e Dados  ·  Inteligência Competitiva HER2+  ·  Uso Interno Confidencial
+Página 10
+7. Pipeline Emergente — ADCs e Novas Moléculas
+Os Anticorpos Conjugados a Drogas (ADCs) são o segmento de maior dinamismo inovador no pipeline
+HER2+. A tabela consolida os principais ADCs em investigação clínica ativa na base.
+ADCs em Investigação Clínica Ativa
+Composto (ADC)
+Estudos
+Fases
+Patrocinador (1º)
+Pacientes
+Trastuzumab Deruxtecan
+46
+Fase 1/2, Fase 2
+AstraZeneca
+14,021
+SHR-A1811
+26
+Fase 1/2, Fase 2
+Cancer Institute and Hospi
+6,823
+Disitamab Vedotin
+11
+Fase 1/2, Fase 2
+Fudan University
+1,861
+Trastuzumab Emtansine
+9
+Fase 2, Fase 3
+Alliance for Clinical Tria
+5,232
+ARX788
+7
+Fase 2, Fase
+2/3
+Ambrx, Inc.
+5,362
+Patritumab Deruxtecan
+5
+Fase 1/2, Fase 2
+Gustave Roussy, Cancer Cam
+1,621
+Datopotamab Deruxtecan
+4
+Fase 2, Fase 3
+AstraZeneca
+2,792
+A166
+2
+Fase 2, Fase 3
+Sichuan Kelun-Biotech Biop
+405
+DP303c
+2
+Fase 3
+CSPC ZhongQi Pharmaceutica
+862
+Ifinatamab Deruxtecan
+1
+Fase 2
+Daiichi Sankyo
+520
+Outras Terapias Emergentes de Destaque
+Molécula
+Classe
+Empresa
+Estágio
+Descrição
+Trastuzumab
+Deruxtecan
+ADC HER2 (DXd)
+AstraZeneca /
+Daiichi
+Comercial /
+Fase 3
+Redefine o padrão em metastático;
+expandindo para HER2-low e early
+SHR-A1811
+ADC HER2
+Jiangsu Hengrui
+Fase 2/3
+Principal concorrente asiático de
+T-DXd; dados promissores
+Zanidatamab
+Bispecífico HER2
+Zymeworks / Jazz
+Fase 2/3
+Anticorpo bispecífico com mecanismo
+duplo de ligação
+Tucatinib
+TKI HER2-seletivo
+Seagen (Pfizer)
+Fase 2/3
+Alta seletividade; eficaz em metástase
+cerebral
+Pyrotinib
+TKI pan-HER
+Hengrui
+Fase 2/3
+Dominante na China; dados maduros
+de Fase 3
+Margetuximab
+Anti-HER2
+(Fc-otimizado)
+MacroGenics
+Fase 3
+Engenharia de Fc para maior atividade
+imune; aprovado FDA
+Tese de inovação: a competição em HER2+ está se deslocando de “qual anti-HER2” para “qual ADC” — e,
+dentro dos ADCs, para a diferenciação por carga útil, taxa droga:anticorpo (DAR) e perfil de segurança. A
+entrada de candidatos asiáticos pressiona preço e acelera o ciclo de inovação global.
+
+
+Pesquisa e Dados  ·  Inteligência Competitiva HER2+  ·  Uso Interno Confidencial
+Página 11
+8. Presença no Brasil
+Nota metodológica: a coleta não preservou o módulo de localizações (centros por país) para reduzir o
+tamanho do banco. A identificação de estudos com o Brasil foi feita por busca textual no JSON — portanto é
+conservadora e possivelmente subestimada. Recomenda-se recoleta com o módulo
+contactsLocationsModule e cruzamento com o REBEC para o quadro geográfico completo.
+Foram identificados 4 estudos com menção ao Brasil:
+NCT03155997
+Fase 3
+Abemaciclib + Terapia Endócrina pós-cirurgia (monarchE)
+Status: Ativo / Não Recrutando · Pacientes: 5.637 · Patrocinador: Eli Lilly
+Brasil como local de recrutamento ativo (144 pacientes na análise basal)
+NCT02763566
+Fase 3
+Abemaciclib em Câncer de Mama (monarcHER)
+Status: Ativo / Não Recrutando · Pacientes: 463 · Patrocinador: Eli Lilly
+Brasil incluído com 21 pacientes no grupo basal
+NCT04576455
+Fase 2
+Giredestrant vs. Monoterapia Endócrina (acelERA)
+Status: Ativo / Não Recrutando · Pacientes: 303 · Patrocinador: Roche
+Brasil entre países participantes (indicação HR+/HER2−)
+NCT04208178
+Fase 3
+Alpelisib + Trastuzumab + Pertuzumab (mutação PIK3CA)
+Status: Ativo / Não Recrutando · Pacientes: 19 · Patrocinador: Novartis
+Brasil removido da lista de países durante o estudo
+Oportunidade Estratégica para o Brasil
+O Brasil é uma oportunidade significativamente subutilizada no pipeline HER2+. Com apenas 4 estudos em
+697 (< 1%), a presença nacional está muito aquém do potencial do país — população expressiva, alta
+incidência e infraestrutura oncológica de referência (INCA, A.C. Camargo, Sírio-Libanês, Albert Einstein,
+HCor, entre outros). Recomendação: mapeamento proativo via REBEC, articulação com patrocinadores
+globais para inclusão de centros brasileiros em estudos Fase 2/3 ainda em site selection, e posicionamento
+do país como hub regional de pesquisa.
+
+
+Pesquisa e Dados  ·  Inteligência Competitiva HER2+  ·  Uso Interno Confidencial
+Página 12
+9. Análise Regulatória e Ciclo de Vida do Pipeline
+Esta seção avalia a maturidade do pipeline — estudos Fase 3 (pré-registro) com maior potencial de impacto
+regulatório — e o horizonte de geração de dados dos estudos em recrutamento.
+Top 9 Estudos Fase 3 por Capacidade de Pacientes
+NCT ID
+Título (resumido)
+Patrocinador
+Fármacos
+Pacientes
+Início
+NCT03233191
+Digital Tomosynthesis
+Mammography and Digital Ma…
+ECOG-ACRIN
+Cancer Rese
+108,508
+2017-09
+NCT00310180
+Hormone Therapy With or Without
+Combination Chem…
+National Cancer
+Instit
+Anastrozole,
+Exemestane…
+10,273
+2006-0
+4
+NCT05514054
+A Study of Imlunestrant Versus
+Standard Endocrin…
+Eli Lilly and
+Company
+Imlunestrant,
+Tamoxifen…
+8,000
+2022-10
+NCT02513394
+PALbociclib CoLlaborative Adjuvant
+Study
+Alliance
+Foundation Tr
+Palbociclib,
+Standard Adju
+5,796
+2015-08
+NCT03155997
+Endocrine Therapy With or Without
+Abemaciclib (L…
+Eli Lilly and
+Company
+Abemaciclib,
+Standard Adju
+5,637
+2017-07
+NCT03701334
+A Trial to Evaluate Efficacy and
+Safety of Riboc…
+Novartis
+Pharmaceutica
+Ribociclib
+5,101
+2018-12
+NCT01272037
+Tamoxifen Citrate, Letrozole,
+Anastrozole, or Ex…
+National Cancer
+Instit
+Anastrozole,
+Exemestane…
+5,018
+2011-02
+NCT06492616
+A Study of Elacestrant Versus
+Standard Endocrine…
+Stemline
+Therapeutics,
+Elacestrant,
+Anastrozole…
+4,220
+2024-09
+NCT04961996
+A Study Evaluating the Efficacy and
+Safety of Ad…
+Hoffmann-La
+Roche
+Giredestrant,
+Physician's
+4,170
+2021-08
+Figura 9 — Horizonte de leitura de dados (esq.): o pico de 2026–2027 antecipa uma onda de resultados. Figura 10 — Tamanho dos
+estudos (dir.): predominam estudos pequenos/médios (Fase 2); poucos megaestudos adjuvantes concentram a maior capacidade.
+Síntese regulatória: com 208 estudos em Fase 3 e um pico de leituras previsto para 2026–2027, os
+próximos 24 meses devem trazer múltiplos marcos capazes de redefinir o padrão de cuidado —
+especialmente na doença metastática e na expansão de ADCs para linhas mais precoces.
+
+
+Pesquisa e Dados  ·  Inteligência Competitiva HER2+  ·  Uso Interno Confidencial
+Página 13
+10. Conclusões e Recomendações Estratégicas
+Com base na análise de 697 ensaios clínicos ativos em câncer de mama HER2+, destacamos as
+recomendações prioritárias para a tomada de decisão executiva:
+1
+Monitorar a corrida dos ADCs
+T-DXd já redefine o padrão em metastático e avança para linhas precoces; SHR-A1811, ARX788 e
+RC48 formam a próxima onda (sobretudo asiática). Ação: alertas regulatórios e de publicação
+dedicados a estes compostos, incluindo agências da China, Japão e Coreia.
+2
+Capturar valor nas combinações CDK4/6 + anti-HER2
+Dezenas de estudos testam essa combinação no subgrupo triplo positivo. Ação: acompanhar
+leituras de 2026–2027 (ver Figura 9) para antecipar reposicionamento de portfólio.
+3
+Ativar centros brasileiros
+Presença < 1% do pipeline global representa oportunidade competitiva clara. Ação: mapear centros
+tier-1 nacionais e abrir diálogo com patrocinadores globais em fase de seleção de sites.
+4
+Construir inteligência sobre metástase cerebral (SNC)
+Volume baixo, mas unmet need alto, onde TKIs (tucatinib, pyrotinib) se diferenciam. Ação: avaliar
+protocolo nacional específico e parcerias acadêmicas.
+5
+Estabelecer vigilância competitiva sobre a China
+O eixo de P&D; migrou para a Ásia (≥36% dos estudos). Ação: incluir periódicos e registros
+regulatórios chineses no monitoramento contínuo de literatura e pipeline.
+Próximos Passos Recomendados
+→ Recoleta dos dados preservando o módulo de localizações para análise geográfica completa
+→ Cruzamento com o REBEC para identificar estudos registrados no Brasil
+→ Monitoramento trimestral de novos registros nas indicações e moléculas prioritárias
+→ Análise de endpoints dos estudos Fase 3 para antecipar marcos regulatórios (2026–2027)
+→ Mapeamento de KOLs associados aos estudos de maior impacto, com foco em Ásia e Brasil
+Fontes: ClinicalTrials.gov (U.S. National Library of Medicine). Coleta: 02/06/2026. Análise: Pesquisa e Dados. Metodologia:
+API v2; filtros Fase 2/3/4, tipo Interventional, status ativo/recrutando; classificação clínica por processamento textual.
+Relatório de uso interno exclusivo e confidencial — gerado em Junho de 2026.
