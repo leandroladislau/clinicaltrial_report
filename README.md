@@ -52,8 +52,6 @@ A classificação é feita por processamento textual (condições + título + re
 | `fetch_trials.py` | Coleta os estudos da API v2 do ClinicalTrials.gov e (re)cria o banco SQLite. |
 | `her2_breast_cancer_trials.db` | Banco SQLite com os snapshots dos estudos (versionado). |
 | `generate_report_updated.py` | **Script atual** de geração do relatório PDF (taxonomia refinada, geografia, índice, infográficos). |
-| `generate_report.py` | Versão anterior do gerador de relatório (mantida como referência). |
-| `generate_report_v2.py` | Protótipo/versão intermediária do gerador (referência). |
 | `REPORT_PROMPT.md` | Prompt reutilizável que descreve fonte de dados, branding, taxonomia e as páginas do relatório. |
 | `email_marketing_her2.html` | Peça de e-mail marketing com o resumo da inteligência HER2+. |
 | `fonts/` | Fontes Prompt e Oswald (Google Fonts) usadas no PDF. |
@@ -63,7 +61,6 @@ A classificação é feita por processamento textual (condições + título + re
 | `scripts/run_weekly_report.py` | Gera o PDF datado + `.kpis_*.json` e valida o artefato. |
 | `scripts/verify_pdf_artifact.py` | Verificação estrutural do PDF (tamanho, 13–15 páginas, tokens do sumário). |
 | `.kpis_YYYY-MM-DD.json` | KPIs de cada edição (histórico para comparação). |
-| `main.py` | Stub gerado pelo `uv init` (não usado no fluxo principal). |
 
 ---
 
@@ -183,14 +180,22 @@ O `scripts/monthly_update.py`:
 5. imprime os KPIs vs. a edição anterior;
 6. falha (exit 14) se qualquer arquivo de histórico tiver sido alterado ou removido.
 
-Depois, a rotina faz `commit` + `push` do `.db`, do novo PDF e do novo `.kpis_*.json`. **Nada do
-histórico é apagado**: cada edição é um arquivo novo datado, e o git guarda as versões anteriores do `.db`.
+Depois, a rotina faz `commit` + `push` direto na **`main`**, **somente** do `.db`, do novo PDF e do novo
+`.kpis_*.json`. **Nada do histórico é apagado**: cada edição é um arquivo novo datado, e o git guarda as
+versões anteriores do `.db`.
+
+**Como a rotina tem permissão de push:** o agendamento (todo dia 1º, 08:23 America/Sao_Paulo) acorda uma
+sessão persistente do Claude Code na nuvem criada **com este repositório como fonte**, o que autoriza o
+push pelo proxy git. Sessões criadas do zero a cada disparo não recebem o repositório como fonte e o push
+falha com 403 (`not in this session's authorized repository set`).
 
 > ⚠️ O `.db` guarda só o **snapshot mais recente** (o `fetch_trials.py` substitui a tabela). O histórico
 > de coletas vive nos PDFs, nos `.kpis_*.json` e no histórico do git.
 
 > 🌐 O ambiente da rotina precisa de acesso de rede a **`clinicaltrials.gov`** (política de rede do
 > ambiente do Claude Code na nuvem). Sem isso, o `fetch_trials.py` falha e nada é commitado.
+
+O procedimento completo que a sessão executora segue está em [`ROTINA_MENSAL.md`](ROTINA_MENSAL.md).
 
 Para rodar manualmente (ou testar sem consultar a API): `uv run scripts/monthly_update.py [--skip-fetch] [--force]`.
 
