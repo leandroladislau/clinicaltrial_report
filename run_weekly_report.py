@@ -10,7 +10,7 @@ import json
 import datetime as dt
 
 # Ensure the project dir is on sys.path so we can import the report module
-PROJECT = '/mnt/arquivos/projetos_pesquisaedados/clinical_trial'
+PROJECT = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, PROJECT)
 
 import generate_report_updated as gr  # noqa: E402

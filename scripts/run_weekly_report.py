@@ -94,7 +94,7 @@ def _import_verifier():
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--project",
-                    default="/mnt/arquivos/projetos_pesquisaedados/clinical_trial",
+                    default=str(Path(__file__).resolve().parent.parent),
                     help="Project directory containing the report module and the SQLite DB")
     ap.add_argument("--module", default="generate_report_updated",
                     help="Report-module name to import (without .py)")

@@ -1,3 +1,5 @@
+import os
+import sys
 import requests
 import sqlite3
 import json
@@ -5,15 +7,22 @@ from datetime import datetime
 
 # Configuration
 BASE_URL = "https://clinicaltrials.gov/api/v2/studies"
-DB_PATH = "/mnt/arquivos/projetos_pesquisaedados/clinical_trial/her2_breast_cancer_trials.db"
+# Caminho relativo ao projeto (funciona em qualquer ambiente). Pode ser sobrescrito
+# com a variável de ambiente HER2_DB_PATH.
+DB_PATH = os.environ.get(
+    "HER2_DB_PATH",
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "her2_breast_cancer_trials.db"),
+)
+# Salvaguarda: se a coleta nova tiver menos que esta fração do snapshot anterior,
+# o banco NÃO é substituído (provável falha parcial da API).
+MIN_RATIO_VS_PREVIOUS = 0.5
 
 # Filters
 TARGET_STATUSES = ["RECRUITING", "ACTIVE_NOT_RECRUITING", "ENROLLING_BY_INVITATION", "NOT_YET_RECRUITING"]
 TARGET_PHASES = ["PHASE2", "PHASE3", "PHASE4"]
 TARGET_TYPE = "INTERVENTIONAL"
 
-def setup_db():
-    conn = sqlite3.connect(DB_PATH)
+def recreate_table(conn):
     cursor = conn.cursor()
     # We keep a few index columns for fast querying, and a JSON blob for the rest
     cursor.execute('DROP TABLE IF EXISTS trial_snapshots')
@@ -27,8 +36,12 @@ def setup_db():
             PRIMARY KEY (nct_id, collection_date)
         )
     ''')
-    conn.commit()
-    return conn
+
+def previous_count(conn):
+    try:
+        return conn.execute('SELECT COUNT(*) FROM trial_snapshots').fetchone()[0]
+    except sqlite3.Error:
+        return 0
 
 def fetch_all_studies():
     studies = []
@@ -87,31 +100,43 @@ def parse_study(s, collection_date):
 def main():
     collection_date = datetime.now().strftime("%Y-%m-%d")
     print(f"creating full-data snapshot for date: {collection_date}")
-    
-    conn = setup_db()
-    cursor = conn.cursor()
-    
+
+    # 1) Busca TUDO antes de tocar no banco: se a API falhar, o snapshot anterior é preservado.
     try:
         all_studies = fetch_all_studies()
-        print(f"Fetched {len(all_studies)} trials. Filtering into JSON snapshots...")
-        
-        count_saved = 0
-        for s in all_studies:
-            data = parse_study(s, collection_date)
-            if data:
-                cursor.execute('''
-                    INSERT INTO trial_snapshots 
-                    (nct_id, collection_date, status, phase, full_data_json)
-                    VALUES (?, ?, ?, ?, ?)
-                ''', data)
-                count_saved += 1
-        
-        conn.commit()
-        print(f"Success. Saved {count_saved} trials with full JSON data (minus locations).")
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"ERROR: falha ao consultar a API ({e}). Banco NÃO foi alterado.", file=sys.stderr)
+        return 1
+    print(f"Fetched {len(all_studies)} trials. Filtering into JSON snapshots...")
+
+    rows = [r for r in (parse_study(s, collection_date) for s in all_studies) if r]
+    if not rows:
+        print("ERROR: nenhum estudo passou nos filtros. Banco NÃO foi alterado.", file=sys.stderr)
+        return 1
+
+    # 2) Só então substitui o snapshot, numa única transação (rollback em caso de erro).
+    conn = sqlite3.connect(DB_PATH)
+    try:
+        prev = previous_count(conn)
+        if prev and len(rows) < prev * MIN_RATIO_VS_PREVIOUS:
+            print(f"ERROR: coleta nova ({len(rows)}) < {MIN_RATIO_VS_PREVIOUS:.0%} do snapshot "
+                  f"anterior ({prev}). Banco NÃO foi alterado.", file=sys.stderr)
+            return 1
+        with conn:  # commit/rollback automático
+            recreate_table(conn)
+            conn.executemany('''
+                INSERT INTO trial_snapshots
+                (nct_id, collection_date, status, phase, full_data_json)
+                VALUES (?, ?, ?, ?, ?)
+            ''', rows)
+        print(f"Success. Saved {len(rows)} trials with full JSON data (minus locations). "
+              f"(snapshot anterior: {prev})")
+        return 0
+    except Exception as e:
+        print(f"ERROR: {e}. Transação revertida.", file=sys.stderr)
+        return 1
     finally:
         conn.close()
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
