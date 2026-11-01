@@ -195,6 +195,8 @@ falha com 403 (`not in this session's authorized repository set`).
 > 🌐 O ambiente da rotina precisa de acesso de rede a **`clinicaltrials.gov`** (política de rede do
 > ambiente do Claude Code na nuvem). Sem isso, o `fetch_trials.py` falha e nada é commitado.
 
+O procedimento completo que a sessão executora segue está em [`ROTINA_MENSAL.md`](ROTINA_MENSAL.md).
+
 Para rodar manualmente (ou testar sem consultar a API): `uv run scripts/monthly_update.py [--skip-fetch] [--force]`.
 
 ---
