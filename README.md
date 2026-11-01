@@ -59,6 +59,10 @@ A classificação é feita por processamento textual (condições + título + re
 | `fonts/` | Fontes Prompt e Oswald (Google Fonts) usadas no PDF. |
 | `relatorio_her2_inteligencia_competitiva_*.pdf` | Relatórios gerados (saídas por data). |
 | `pyproject.toml` / `uv.lock` | Definição do projeto e dependências (gerenciadas com `uv`). |
+| `scripts/monthly_update.py` | Orquestrador da atualização mensal (fetch → relatório → verificação → trava de histórico). |
+| `scripts/run_weekly_report.py` | Gera o PDF datado + `.kpis_*.json` e valida o artefato. |
+| `scripts/verify_pdf_artifact.py` | Verificação estrutural do PDF (tamanho, 13–15 páginas, tokens do sumário). |
+| `.kpis_YYYY-MM-DD.json` | KPIs de cada edição (histórico para comparação). |
 | `main.py` | Stub gerado pelo `uv init` (não usado no fluxo principal). |
 
 ---
@@ -70,7 +74,7 @@ A classificação é feita por processamento textual (condições + título + re
   (este projeto usa `uv` — **não** use `pip`/`pip3`).
 
 Dependências principais (declaradas em `pyproject.toml`): `matplotlib`, `numpy`, `pandas`,
-`pillow`, `pymupdf`, `reportlab`, `squarify`. O `fetch_trials.py` também usa `requests`.
+`pillow`, `pymupdf`, `reportlab`, `squarify`. O `fetch_trials.py` usa `requests` (também declarado em `pyproject.toml`).
 
 ---
 
@@ -81,8 +85,7 @@ Dependências principais (declaradas em `pyproject.toml`): `matplotlib`, `numpy`
 uv sync
 ```
 
-> Se faltar alguma dependência de runtime (ex.: `requests`), adicione-a com
-> `uv add <pacote>`.
+> Se faltar alguma dependência de runtime, adicione-a com `uv add <pacote>`.
 
 ---
 
@@ -127,8 +130,9 @@ Ao final, o script imprime quantos estudos foram salvos.
   `TARGET_STATUSES`, `TARGET_PHASES`, `TARGET_TYPE` e o `query.term`). Ajuste-os ali se
   precisar mudar o universo da coleta.
 
-- **`DB_PATH` é um caminho absoluto** no `fetch_trials.py`. Se mover o projeto, atualize
-  essa constante.
+- **`DB_PATH`** do `fetch_trials.py` agora é relativo ao projeto (pode ser sobrescrito com a
+  variável de ambiente `HER2_DB_PATH`). A API é consultada **antes** de tocar no banco; se falhar,
+  ou se a coleta vier com menos de 50% do snapshot anterior, o banco não é substituído.
 
 - **O bloco `locations` é descartado** na coleta. Por isso a análise geográfica e de
   presença no Brasil é necessariamente conservadora (heurística por nome de patrocinador +
@@ -157,6 +161,38 @@ O script:
 > **Renomeie a saída por data** ajustando `PDF_PATH` no script (ex.:
 > `relatorio_her2_inteligencia_competitiva_2026-06-12.pdf`) para não sobrescrever
 > relatórios anteriores.
+
+---
+
+## Atualização mensal automatizada
+
+Uma rotina agendada (Claude Code na nuvem) roda **todo dia 1º do mês** e executa:
+
+```bash
+uv sync
+uv run scripts/monthly_update.py
+```
+
+O `scripts/monthly_update.py`:
+
+1. registra o hash de todo o **histórico** (`relatorio_*.pdf`, `relatorio_*.txt`, `.kpis_*.json`);
+2. roda `fetch_trials.py` (se a API falhar, o banco anterior é **preservado**);
+3. confirma que o banco ficou com a coleta do dia;
+4. gera `relatorio_her2_inteligencia_competitiva_YYYY-MM-DD.pdf` + `.kpis_YYYY-MM-DD.json`
+   (`scripts/run_weekly_report.py`) e valida o PDF (`scripts/verify_pdf_artifact.py`);
+5. imprime os KPIs vs. a edição anterior;
+6. falha (exit 14) se qualquer arquivo de histórico tiver sido alterado ou removido.
+
+Depois, a rotina faz `commit` + `push` do `.db`, do novo PDF e do novo `.kpis_*.json`. **Nada do
+histórico é apagado**: cada edição é um arquivo novo datado, e o git guarda as versões anteriores do `.db`.
+
+> ⚠️ O `.db` guarda só o **snapshot mais recente** (o `fetch_trials.py` substitui a tabela). O histórico
+> de coletas vive nos PDFs, nos `.kpis_*.json` e no histórico do git.
+
+> 🌐 O ambiente da rotina precisa de acesso de rede a **`clinicaltrials.gov`** (política de rede do
+> ambiente do Claude Code na nuvem). Sem isso, o `fetch_trials.py` falha e nada é commitado.
+
+Para rodar manualmente (ou testar sem consultar a API): `uv run scripts/monthly_update.py [--skip-fetch] [--force]`.
 
 ---
 

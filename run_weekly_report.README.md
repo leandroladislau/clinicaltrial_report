@@ -6,8 +6,8 @@
 
 ## Como rodar
 ```bash
-cd /mnt/arquivos/projetos_pesquisaedados/clinical_trial
-.venv/bin/python run_weekly_report.py
+cd <raiz do projeto>
+uv run scripts/monthly_update.py   # fluxo atual (mensal); veja o README principal
 ```
 
 O script:
@@ -18,5 +18,5 @@ O script:
 
 ## Verificações pós-build
 - Arquivo existe e tem tamanho > 100 KB.
-- PyMuPDF confirma 13 páginas.
+- PyMuPDF confirma 13–15 páginas.
 - Comparar KPIs do JSON contra o relatório anterior para detectar drift.
