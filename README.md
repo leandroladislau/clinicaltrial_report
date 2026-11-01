@@ -180,14 +180,14 @@ O `scripts/monthly_update.py`:
 5. imprime os KPIs vs. a edição anterior;
 6. falha (exit 14) se qualquer arquivo de histórico tiver sido alterado ou removido.
 
-Depois, a rotina faz `commit` + `push` (branch `claude/optimistic-hawking-9p2flf`) **somente** do `.db`,
-do novo PDF e do novo `.kpis_*.json`. **Nada do histórico é apagado**: cada edição é um arquivo novo
-datado, e o git guarda as versões anteriores do `.db`.
+Depois, a rotina faz `commit` + `push` direto na **`main`**, **somente** do `.db`, do novo PDF e do novo
+`.kpis_*.json`. **Nada do histórico é apagado**: cada edição é um arquivo novo datado, e o git guarda as
+versões anteriores do `.db`.
 
 **Como a rotina tem permissão de push:** o agendamento (todo dia 1º, 08:23 America/Sao_Paulo) acorda uma
 sessão persistente do Claude Code na nuvem criada **com este repositório como fonte**, o que autoriza o
-push pelo proxy git. Rotinas que criam uma sessão nova a cada disparo não recebem o repositório como
-fonte e o push falha com 403 (`not in this session's authorized repository set`).
+push pelo proxy git. Sessões criadas do zero a cada disparo não recebem o repositório como fonte e o push
+falha com 403 (`not in this session's authorized repository set`).
 
 > ⚠️ O `.db` guarda só o **snapshot mais recente** (o `fetch_trials.py` substitui a tabela). O histórico
 > de coletas vive nos PDFs, nos `.kpis_*.json` e no histórico do git.
